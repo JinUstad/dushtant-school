@@ -71,12 +71,12 @@ export default function Home() {
             </AnimatedSection>
             
             <AnimatedSection delay={0.2}>
-              <h2 className="text-sm font-bold text-primary uppercase tracking-widest mb-3">Welcome to Dushtant School</h2>
+              <h2 className="text-sm font-bold text-primary uppercase tracking-widest mb-3">Welcome to Dr.Ambedkar Modern Public School</h2>
               <h3 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                 Nurturing Potential, <br />Inspiring Excellence.
               </h3>
               <p className="text-gray-600 text-lg mb-6 leading-relaxed">
-                At Dushtant School, we believe in providing a balanced education that focuses on both academic brilliance and character building. Our state-of-the-art campus and dedicated educators ensure every child discovers their true potential.
+                At Dr.Ambedkar Modern Public School, we believe in providing a balanced education that focuses on both academic brilliance and character building. Our state-of-the-art campus and dedicated educators ensure every child discovers their true potential.
               </p>
               <ul className="space-y-4 mb-8">
                 {[
@@ -105,7 +105,7 @@ export default function Home() {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-sm font-bold text-primary uppercase tracking-widest mb-3">Why Choose Us</h2>
             <h3 className="text-3xl md:text-5xl font-bold text-gray-900">
-              The Dushtant Advantage
+              The Dr.Ambedkar Advantage
             </h3>
           </div>
           
@@ -223,7 +223,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { text: "The teachers are incredibly supportive. My daughter has shown immense growth in both academics and confidence since joining.", author: "Priya Sharma", role: "Parent of Class 3 Student" },
-              { text: "Dushtant School provides a perfect balance of studies and extra-curricular activities. The facilities are top-notch.", author: "Rahul Verma", role: "Parent of UKG Student" },
+              { text: "Dr.Ambedkar Modern Public School provides a perfect balance of studies and extra-curricular activities. The facilities are top-notch.", author: "Rahul Verma", role: "Parent of UKG Student" },
               { text: "Best decision we made for our child's education. The focus on moral values alongside modern education is commendable.", author: "Anita Desai", role: "Parent of Class 7 Student" }
             ].map((review, idx) => (
               <AnimatedSection key={idx} delay={idx * 0.1}>
@@ -251,7 +251,7 @@ export default function Home() {
               Admissions Open for Academic Session 2026-27
             </h2>
             <p className="text-xl text-primary-foreground/90 mb-10 max-w-2xl mx-auto">
-              Join the Dushtant School family and give your child the best start to their educational journey.
+              Join the Dr.Ambedkar Modern Public School family and give your child the best start to their educational journey.
             </p>
             <Link
               href="/contact"

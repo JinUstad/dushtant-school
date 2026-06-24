@@ -1,48 +1,10 @@
 "use client";
 
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
-import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { FaFacebookF as Facebook, FaInstagram as Instagram, FaYoutube as Youtube } from "react-icons/fa";
 import { AnimatedSection } from "@/components/AnimatedSection";
 
-const formSchema = z.object({
-  studentName: z.string().min(2, "Student name must be at least 2 characters"),
-  parentName: z.string().min(2, "Parent name must be at least 2 characters"),
-  mobile: z.string().regex(/^[0-9]{10}$/, "Mobile number must be exactly 10 digits"),
-  email: z.string().email("Please enter a valid email address").optional().or(z.literal("")),
-  classInterested: z.string().min(1, "Please select a class"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
-});
-
-type FormData = z.infer<typeof formSchema>;
-
 export default function ContactPage() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
-
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm<FormData>({
-    resolver: zodResolver(formSchema),
-  });
-
-  const onSubmit = async (data: FormData) => {
-    setIsSubmitting(true);
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    console.log(data);
-    setIsSubmitting(false);
-    setSubmitSuccess(true);
-    reset();
-    setTimeout(() => setSubmitSuccess(false), 5000);
-  };
-
   return (
     <div className="flex flex-col w-full min-h-screen bg-gray-50 pb-20">
       {/* Page Header */}
@@ -75,7 +37,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-bold text-gray-900">Our Address</h3>
-                      <p className="text-gray-600 mt-1">123 Education Lane, Knowledge City, State - 123456</p>
+                      <p className="text-gray-600 mt-1">Duryai, Uttar Pradesh 203207</p>
                     </div>
                   </div>
                   
@@ -85,8 +47,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-bold text-gray-900">Phone Number</h3>
-                      <p className="text-gray-600 mt-1">+91 98765 43210</p>
-                      <p className="text-gray-600">+91 12345 67890</p>
+                      <p className="text-gray-600 mt-1">+91 9773667194</p>
                     </div>
                   </div>
                   
@@ -96,8 +57,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-bold text-gray-900">Email Address</h3>
-                      <p className="text-gray-600 mt-1">admissions@dushtantschool.edu</p>
-                      <p className="text-gray-600">info@dushtantschool.edu</p>
+                      <p className="text-gray-600 mt-1">admissions@ambedkarschool.edu</p>
+                      <p className="text-gray-600">info@ambedkarschool.edu</p>
                     </div>
                   </div>
                   
@@ -131,139 +92,28 @@ export default function ContactPage() {
             </AnimatedSection>
           </div>
 
-          {/* Contact Form */}
+          {/* Location Map */}
           <div className="lg:col-span-2">
             <AnimatedSection delay={0.2}>
-              <div className="bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-gray-100 relative overflow-hidden">
+              <div className="bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-gray-100 relative overflow-hidden h-full min-h-[500px] flex flex-col">
                 <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary to-secondary"></div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-2">Admission Inquiry</h2>
-                <p className="text-gray-600 mb-8">Please fill out the form below and our admission counselor will contact you shortly.</p>
+                <h2 className="text-3xl font-bold text-gray-900 mb-2">Our Location</h2>
+                <p className="text-gray-600 mb-8">Visit our campus to experience the environment we offer to our students.</p>
                 
-                {submitSuccess && (
-                  <div className="mb-8 p-4 bg-green-50 border border-green-200 text-green-700 rounded-lg flex items-center gap-3">
-                    <Send className="text-green-500" />
-                    <p className="font-medium">Thank you! Your inquiry has been submitted successfully.</p>
-                  </div>
-                )}
-
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {/* Student Name */}
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Student Name *</label>
-                      <input
-                        {...register("studentName")}
-                        type="text"
-                        className={`w-full px-4 py-3 rounded-lg border ${errors.studentName ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:ring-primary'} focus:outline-none focus:ring-2 transition-shadow bg-gray-50 focus:bg-white`}
-                        placeholder="John Doe"
-                      />
-                      {errors.studentName && <p className="mt-1 text-sm text-red-500">{errors.studentName.message}</p>}
-                    </div>
-                    
-                    {/* Parent Name */}
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Parent Name *</label>
-                      <input
-                        {...register("parentName")}
-                        type="text"
-                        className={`w-full px-4 py-3 rounded-lg border ${errors.parentName ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:ring-primary'} focus:outline-none focus:ring-2 transition-shadow bg-gray-50 focus:bg-white`}
-                        placeholder="Mr./Mrs. Doe"
-                      />
-                      {errors.parentName && <p className="mt-1 text-sm text-red-500">{errors.parentName.message}</p>}
-                    </div>
-                    
-                    {/* Mobile Number */}
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Mobile Number *</label>
-                      <input
-                        {...register("mobile")}
-                        type="tel"
-                        className={`w-full px-4 py-3 rounded-lg border ${errors.mobile ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:ring-primary'} focus:outline-none focus:ring-2 transition-shadow bg-gray-50 focus:bg-white`}
-                        placeholder="9876543210"
-                      />
-                      {errors.mobile && <p className="mt-1 text-sm text-red-500">{errors.mobile.message}</p>}
-                    </div>
-                    
-                    {/* Email */}
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-                      <input
-                        {...register("email")}
-                        type="email"
-                        className={`w-full px-4 py-3 rounded-lg border ${errors.email ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:ring-primary'} focus:outline-none focus:ring-2 transition-shadow bg-gray-50 focus:bg-white`}
-                        placeholder="john@example.com"
-                      />
-                      {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email.message}</p>}
-                    </div>
-                  </div>
-
-                  {/* Class Interested */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Class Interested For *</label>
-                    <select
-                      {...register("classInterested")}
-                      className={`w-full px-4 py-3 rounded-lg border ${errors.classInterested ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:ring-primary'} focus:outline-none focus:ring-2 transition-shadow bg-gray-50 focus:bg-white appearance-none`}
-                    >
-                      <option value="">Select a class...</option>
-                      <option value="nursery">Nursery</option>
-                      <option value="lkg">LKG</option>
-                      <option value="ukg">UKG</option>
-                      <option value="1">Class 1</option>
-                      <option value="2">Class 2</option>
-                      <option value="3">Class 3</option>
-                      <option value="4">Class 4</option>
-                      <option value="5">Class 5</option>
-                      <option value="6">Class 6</option>
-                      <option value="7">Class 7</option>
-                      <option value="8">Class 8</option>
-                    </select>
-                    {errors.classInterested && <p className="mt-1 text-sm text-red-500">{errors.classInterested.message}</p>}
-                  </div>
-
-                  {/* Message */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Message/Query *</label>
-                    <textarea
-                      {...register("message")}
-                      rows={4}
-                      className={`w-full px-4 py-3 rounded-lg border ${errors.message ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:ring-primary'} focus:outline-none focus:ring-2 transition-shadow bg-gray-50 focus:bg-white resize-none`}
-                      placeholder="Please let us know how we can help you..."
-                    ></textarea>
-                    {errors.message && <p className="mt-1 text-sm text-red-500">{errors.message.message}</p>}
-                  </div>
-
-                  {/* Submit Button */}
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full bg-primary hover:bg-secondary text-white font-bold py-4 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-                  >
-                    {isSubmitting ? (
-                      <span className="inline-block w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
-                    ) : (
-                      <>Send Message <Send size={20} /></>
-                    )}
-                  </button>
-                </form>
+                <div className="rounded-xl overflow-hidden shadow-sm border border-gray-200 flex-grow w-full relative">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d220.0031999224181!2d77.50264347726483!3d28.635378398519144!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ced90fa86c8b5%3A0xf75ffcd1d747b429!2sDr.Ambedkar%20Modern%20Public%20School!5e1!3m2!1sen!2sin!4v1782291764345!5m2!1sen!2sin" 
+                    className="absolute top-0 left-0 w-full h-full"
+                    style={{ border: 0 }} 
+                    allowFullScreen={true} 
+                    loading="lazy" 
+                    referrerPolicy="strict-origin-when-cross-origin"
+                  ></iframe>
+                </div>
               </div>
             </AnimatedSection>
           </div>
         </div>
-
-        {/* Google Maps Integration */}
-        <AnimatedSection delay={0.4}>
-          <div className="mt-16 rounded-2xl overflow-hidden shadow-md border border-gray-200 h-[400px] w-full">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14008.114827184407!2d77.2065321685834!3d28.62967198816773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd37b741d057%3A0xc46188cbcc01452e!2sNew%20Delhi%2C%20Delhi%2C%20India!5e0!3m2!1sen!2sus!4v1714151296718!5m2!1sen!2sus" 
-              width="100%" 
-              height="100%" 
-              style={{ border: 0 }} 
-              allowFullScreen={true} 
-              loading="lazy" 
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
-        </AnimatedSection>
       </div>
     </div>
   );

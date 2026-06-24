@@ -3,8 +3,8 @@ import { Target, Heart, Eye, CheckCircle2, Award, BookOpen, Lightbulb, UserCheck
 import { AnimatedSection } from "@/components/AnimatedSection";
 
 export const metadata = {
-  title: "About Us | Dushtant School",
-  description: "Learn about Dushtant School's mission, vision, values, and teaching methodology.",
+  title: "About Us | Dr.Ambedkar Modern Public School",
+  description: "Learn about Dr.Ambedkar Modern Public School's mission, vision, values, and teaching methodology.",
 };
 
 export default function AboutPage() {
@@ -28,7 +28,7 @@ export default function AboutPage() {
             {[
               { icon: Target, title: "Our Mission", color: "text-blue-500", bg: "bg-blue-50", desc: "To provide a stimulating learning environment with a technological orientation, which maximizes individual potential and ensures students of all ability levels are well equipped to meet the challenges of education, work, and life." },
               { icon: Eye, title: "Our Vision", color: "text-purple-500", bg: "bg-purple-50", desc: "To be a center of excellence in education that nurtures global citizens with a strong sense of values, integrity, and social responsibility." },
-              { icon: Heart, title: "Our Values", color: "text-red-500", bg: "bg-red-50", desc: "Integrity, Respect, Empathy, Excellence, and Continuous Learning form the core of everything we do at Dushtant School." }
+              { icon: Heart, title: "Our Values", color: "text-red-500", bg: "bg-red-50", desc: "Integrity, Respect, Empathy, Excellence, and Continuous Learning form the core of everything we do at Dr.Ambedkar Modern Public School." }
             ].map((item, idx) => (
               <AnimatedSection key={idx} delay={idx * 0.1}>
                 <div className="p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-all h-full bg-white relative overflow-hidden group">
@@ -59,10 +59,10 @@ export default function AboutPage() {
               <div className="p-10 md:p-16 flex flex-col justify-center">
                 <AnimatedSection>
                   <h2 className="text-sm font-bold text-primary uppercase tracking-widest mb-3">Principal's Desk</h2>
-                  <h3 className="text-3xl font-bold text-gray-900 mb-6">Welcome to Dushtant</h3>
+                  <h3 className="text-3xl font-bold text-gray-900 mb-6">Welcome to Dr.Ambedkar Modern Public School</h3>
                   <div className="space-y-4 text-gray-600 mb-8 leading-relaxed">
                     <p>
-                      It gives me immense pleasure to welcome you to Dushtant School. Education is not just about academic excellence; it is about character building and nurturing responsible global citizens.
+                      It gives me immense pleasure to welcome you to Dr.Ambedkar Modern Public School. Education is not just about academic excellence; it is about character building and nurturing responsible global citizens.
                     </p>
                     <p>
                       Our dedicated faculty ensures that every child receives the attention they deserve. We believe in creating an environment where learning is a joy and where students are encouraged to explore their potential to the fullest.
@@ -70,7 +70,7 @@ export default function AboutPage() {
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-900 text-lg">Dr. Sarah Johnson</h4>
-                    <p className="text-primary font-medium">Principal, Dushtant School</p>
+                    <p className="text-primary font-medium">Principal, Dr.Ambedkar Modern Public School</p>
                   </div>
                 </AnimatedSection>
               </div>

@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+import { FloatingContactButtons } from "@/components/FloatingContactButtons";
 import { AdmissionPopup } from "@/components/AdmissionPopup";
 
 const inter = Inter({
@@ -12,7 +12,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Dushtant School - Building Bright Futures",
+  title: "Dr.Ambedkar Modern Public School - Building Bright Futures",
   description: "A modern, professional school website for Nursery to Class 8.",
 };
 
@@ -29,7 +29,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        <FloatingWhatsApp />
+        <FloatingContactButtons />
         <AdmissionPopup />
       </body>
     </html>

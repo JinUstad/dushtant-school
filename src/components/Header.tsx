@@ -43,7 +43,7 @@ export function Header() {
             </div>
             <div>
               <h1 className="text-xl font-bold text-gray-900 leading-tight">
-                Dushtant
+                Dr.Ambedkar Modern Public
               </h1>
               <p className="text-xs text-primary font-semibold tracking-wider uppercase">
                 School

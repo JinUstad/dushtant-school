@@ -15,7 +15,7 @@ export function Footer() {
               </div>
               <div>
                 <h2 className="text-xl font-bold text-white leading-tight">
-                  Dushtant
+                  Dr.Ambedkar Modern Public
                 </h2>
                 <p className="text-xs text-primary font-semibold tracking-wider uppercase">
                   School
@@ -90,15 +90,15 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-sm">
                 <MapPin size={18} className="text-primary shrink-0 mt-0.5" />
-                <span className="text-gray-400">123 Education Lane, Knowledge City, State - 123456</span>
+                <span className="text-gray-400">Duryai, Uttar Pradesh 203207</span>
               </li>
               <li className="flex items-center gap-3 text-sm">
                 <Phone size={18} className="text-primary shrink-0" />
-                <span className="text-gray-400">+91 98765 43210</span>
+                <span className="text-gray-400">+91 9773667194</span>
               </li>
               <li className="flex items-center gap-3 text-sm">
                 <Mail size={18} className="text-primary shrink-0" />
-                <span className="text-gray-400">info@dushtantschool.edu</span>
+                <span className="text-gray-400">admissions@ambedkarschool.edu</span>
               </li>
             </ul>
             
@@ -121,7 +121,7 @@ export function Footer() {
 
         {/* Copyright */}
         <div className="pt-8 border-t border-gray-800 text-center flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-          <p>© {new Date().getFullYear()} Dushtant School. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Dr.Ambedkar Modern Public School. All rights reserved.</p>
           <div className="flex gap-4">
             <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>

@@ -45,7 +45,7 @@ export default function GalleryPage() {
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Photo Gallery</h1>
             <div className="w-24 h-1.5 bg-accent mx-auto rounded-full"></div>
             <p className="text-white/80 mt-4 max-w-2xl mx-auto">
-              Glimpses of vibrant life and learning at Dushtant School.
+              Glimpses of vibrant life and learning at Dr.Ambedkar Modern Public School.
             </p>
           </AnimatedSection>
         </div>
