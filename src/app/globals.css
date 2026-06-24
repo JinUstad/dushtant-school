@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #1E3A8A;
-  --color-secondary: #38BDF8;
-  --color-accent: #FACC15;
+  --color-primary: #0F172A;
+  --color-secondary: #3B82F6;
+  --color-accent: #F59E0B;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
+  --background: #F8FAFC;
+  --foreground: #0F172A;
 }
 
 html {
@@ -22,4 +22,51 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), sans-serif;
+}
+
+@utility glass-card {
+  background-color: rgb(255 255 255 / 0.7);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgb(255 255 255 / 0.5);
+  box-shadow: 0 8px 30px rgb(0 0 0 / 0.04);
+  border-radius: 1rem;
+  transition: all 300ms;
+}
+@utility glass-card-hover {
+  &:hover {
+    box-shadow: 0 20px 40px rgb(0 0 0 / 0.08);
+    transform: translateY(-4px);
+    background-color: rgb(255 255 255 / 0.9);
+  }
+}
+
+@utility glass-dark {
+  background-color: rgb(15 23 42 / 0.6);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgb(255 255 255 / 0.1);
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  border-radius: 1rem;
+}
+
+@utility text-gradient {
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, var(--color-secondary), #9333ea);
+}
+
+@utility text-gradient-light {
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #ffffff, #bfdbfe);
+}
+
+@utility bg-gradient-premium {
+  background-image: linear-gradient(to bottom right, #0f172a, #1e3a8a, #1e293b);
+}
+
+@utility absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
