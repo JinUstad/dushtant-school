@@ -120,8 +120,16 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="pt-8 border-t border-gray-800 text-center flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-          <p>© {new Date().getFullYear()} Dr.Ambedkar Modern Public School. All rights reserved.</p>
+        <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+          <div className="text-center md:text-left">
+            <p>© {new Date().getFullYear()} Dr.Ambedkar Modern Public School. All rights reserved.</p>
+            <p className="mt-1">
+              Developed by{" "}
+              <a href="https://www.devfordevs.in/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-white transition-colors font-medium">
+                DevforDevs
+              </a>
+            </p>
+          </div>
           <div className="flex gap-4">
             <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
