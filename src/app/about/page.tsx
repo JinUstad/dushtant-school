@@ -15,7 +15,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-gradient-premium"></div>
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2000&auto=format&fit=crop')] opacity-20 mix-blend-overlay object-cover w-full h-full"></div>
         <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/30 rounded-full blur-[100px] pointer-events-none"></div>
-        
+
         <div className="container mx-auto px-4 relative z-10 text-center pt-10">
           <AnimatedSection>
             <div className="inline-block mb-4 px-4 py-1.5 rounded-full border border-white/20 bg-white/10 backdrop-blur-md">
@@ -29,7 +29,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* School Introduction (Mission, Vision, Values) */}
+      {/* School Introduction (Mission, Vision, Values) -----*/}
       <section className="py-24 bg-background relative -mt-10 z-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -57,16 +57,16 @@ export default function AboutPage() {
       <section className="py-24 bg-gray-50/50 relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            
+
             <AnimatedSection>
               <div className="glass-card p-4 rounded-3xl shadow-2xl relative overflow-hidden">
                 <div className="relative aspect-video w-full rounded-2xl overflow-hidden bg-slate-900">
-                  <iframe 
+                  <iframe
                     className="absolute top-0 left-0 w-full h-full"
-                    src="https://www.youtube.com/embed/ScMzIvxBSi4?autoplay=0&controls=1&rel=0" 
-                    title="Message from Principal" 
-                    frameBorder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    src="https://www.youtube.com/embed/ScMzIvxBSi4?autoplay=0&controls=1&rel=0"
+                    title="Message from Principal"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   ></iframe>
                 </div>
@@ -76,7 +76,7 @@ export default function AboutPage() {
             <AnimatedSection delay={0.2} className="flex flex-col justify-center">
               <h2 className="text-sm font-bold text-secondary uppercase tracking-[0.2em] mb-3">Principal's Desk</h2>
               <h3 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
-                A Message from our <br/><span className="text-gradient">Leadership</span>
+                A Message from our <br /><span className="text-gradient">Leadership</span>
               </h3>
               <div className="space-y-6 text-gray-600 mb-10 text-lg font-light leading-relaxed">
                 <p>
@@ -115,7 +115,7 @@ export default function AboutPage() {
               Our <span className="text-gradient">Methodology</span>
             </h3>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               { icon: BookOpen, title: "Activity Based Learning", desc: "We believe children learn best by doing. Our curriculum incorporates hands-on activities that make learning engaging and memorable." },
@@ -149,7 +149,7 @@ export default function AboutPage() {
             </h3>
             <p className="text-xl text-blue-100 font-light">The pillars that define our educational approach.</p>
           </div>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
             {[
               "Academic Excellence",
