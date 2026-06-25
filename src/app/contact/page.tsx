@@ -12,7 +12,7 @@ export default function ContactPage() {
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2000&auto=format&fit=crop')] opacity-20 mix-blend-overlay object-cover w-full h-full"></div>
         <div className="container mx-auto px-4 relative z-10 text-center pt-10">
           <AnimatedSection>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Contact Us</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">Contact Us</h1>
             <div className="w-24 h-1.5 bg-accent mx-auto rounded-full"></div>
             <p className="text-white/80 mt-4 max-w-2xl mx-auto">
               We'd love to hear from you. Reach out for admissions and inquiries.

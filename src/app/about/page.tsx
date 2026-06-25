@@ -21,7 +21,7 @@ export default function AboutPage() {
             <div className="inline-block mb-4 px-4 py-1.5 rounded-full border border-white/20 bg-white/10 backdrop-blur-md">
               <span className="text-white/90 text-sm font-semibold tracking-wider uppercase">Our Story</span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight">About <span className="text-gradient-light">Us</span></h1>
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight">About <span className="text-gradient-light">Us</span></h1>
             <p className="text-xl text-blue-100 max-w-2xl mx-auto font-light">
               Discover our commitment to excellence, our rich history, and the values that drive us forward every day.
             </p>

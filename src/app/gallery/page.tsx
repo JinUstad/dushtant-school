@@ -25,6 +25,14 @@ const galleryImages = [
   { id: 7, src: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=800&auto=format&fit=crop", category: "School Campus", alt: "School Library" },
   { id: 8, src: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=800&auto=format&fit=crop", category: "Events", alt: "Cultural Activities" },
   { id: 9, src: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800&auto=format&fit=crop", category: "School Campus", alt: "Campus view" },
+  { id: 10, src: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop", category: "Classrooms", alt: "Students focused in class" },
+  { id: 11, src: "https://images.unsplash.com/photo-1492538368677-f6e0afe31dcc?q=80&w=800&auto=format&fit=crop", category: "Events", alt: "Auditorium event" },
+  { id: 12, src: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=800&auto=format&fit=crop", category: "Sports Day", alt: "Track and field" },
+  { id: 13, src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop", category: "Labs", alt: "Physics Lab" },
+  { id: 14, src: "https://images.unsplash.com/photo-1594446423247-fc98c0dc1453?q=80&w=800&auto=format&fit=crop", category: "School Campus", alt: "Play area" },
+  { id: 15, src: "https://images.unsplash.com/photo-1526676037777-05a232554f77?q=80&w=800&auto=format&fit=crop", category: "Sports Day", alt: "Basketball court" },
+  { id: 16, src: "https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=800&auto=format&fit=crop", category: "Classrooms", alt: "Interactive learning" },
+  { id: 17, src: "https://images.unsplash.com/photo-1511516171873-53e1eb322509?q=80&w=800&auto=format&fit=crop", category: "Events", alt: "Annual Exhibition" },
 ];
 
 export default function GalleryPage() {
@@ -74,7 +82,7 @@ export default function GalleryPage() {
         {/* Gallery Grid */}
         <motion.div 
           layout
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"
         >
           <AnimatePresence>
             {filteredImages.map((image) => (
@@ -85,7 +93,7 @@ export default function GalleryPage() {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
                 key={image.id}
-                className="relative h-72 rounded-2xl overflow-hidden group cursor-pointer shadow-sm hover:shadow-xl"
+                className="relative h-64 sm:h-72 rounded-2xl overflow-hidden group cursor-pointer shadow-sm hover:shadow-xl"
                 onClick={() => setSelectedImage(image.src)}
               >
                 <Image
@@ -94,12 +102,12 @@ export default function GalleryPage() {
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <ZoomIn className="text-white/80 w-12 h-12 transform scale-50 group-hover:scale-100 transition-transform duration-300" />
+                <div className="absolute inset-0 bg-black/50 opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <ZoomIn className="text-white/80 w-12 h-12 transform scale-50 lg:group-hover:scale-100 transition-transform duration-300 hidden lg:block" />
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <p className="text-white font-medium">{image.alt}</p>
-                  <p className="text-primary-foreground text-xs">{image.category}</p>
+                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 via-black/40 to-transparent translate-y-0 lg:translate-y-full lg:group-hover:translate-y-0 transition-transform duration-300">
+                  <p className="text-white font-medium drop-shadow-md">{image.alt}</p>
+                  <p className="text-blue-200 text-xs drop-shadow-md mt-0.5">{image.category}</p>
                 </div>
               </motion.div>
             ))}

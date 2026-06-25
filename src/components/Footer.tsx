@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { MapPin, Phone, Mail, GraduationCap } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 import { FaFacebookF as Facebook, FaInstagram as Instagram, FaYoutube as Youtube } from "react-icons/fa";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -9,9 +10,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12">
           {/* Brand & About */}
           <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-2 group mb-6">
-              <div className="bg-primary text-white p-2 rounded-lg">
-                <GraduationCap size={28} />
+            <Link href="/" className="flex items-center gap-3 group mb-6">
+              <div className="bg-primary p-1 rounded-lg w-14 h-14 relative overflow-hidden flex-shrink-0 shadow-sm">
+                <Image 
+                  src="/dr-sahab-img.jpeg" 
+                  alt="Dr. Ambedkar" 
+                  fill 
+                  className="object-cover rounded-md"
+                />
               </div>
               <div>
                 <h2 className="text-xl font-bold text-white leading-tight">

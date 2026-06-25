@@ -4,7 +4,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, GraduationCap, Phone } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
+import Image from "next/image";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,9 +38,14 @@ export function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="bg-primary text-white p-2 rounded-lg group-hover:bg-secondary transition-colors duration-300">
-              <GraduationCap size={32} />
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="bg-primary p-1 rounded-lg group-hover:bg-secondary transition-colors duration-300 w-12 h-12 relative overflow-hidden flex-shrink-0 shadow-sm">
+              <Image 
+                src="/dr-sahab-img.jpeg" 
+                alt="Dr. Ambedkar" 
+                fill 
+                className="object-cover rounded-md"
+              />
             </div>
             <div>
               <h1 className="text-xl font-bold text-gray-900 leading-tight">

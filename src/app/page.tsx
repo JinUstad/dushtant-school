@@ -2,26 +2,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { BookOpen, Users, Monitor, Trophy, ShieldCheck, Star, ArrowRight, Play } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
+import { HeroCarousel } from "@/components/HeroCarousel";
 
 export default function Home() {
   return (
     <div className="flex flex-col w-full overflow-hidden">
       {/* Hero Section */}
-      <section className="relative h-[90vh] min-h-[700px] flex items-center justify-center">
-        <div className="absolute inset-0 w-full h-full">
-          <Image
-            src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2000&auto=format&fit=crop"
-            alt="Happy school children"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-premium opacity-80 mix-blend-multiply" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
-        </div>
+      <section className="relative min-h-screen lg:min-h-[800px] flex items-center justify-center py-20 lg:py-32">
+        <HeroCarousel />
         
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center md:text-left pt-20">
-          <div className="max-w-4xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center pt-10">
+          <div className="max-w-4xl mx-auto flex flex-col items-center">
             <AnimatedSection>
               <div className="inline-block mb-4 px-4 py-1.5 rounded-full border border-white/20 bg-white/10 backdrop-blur-md">
                 <span className="text-white/90 text-sm font-semibold tracking-wider uppercase">Welcome to the Future of Education</span>
@@ -33,21 +24,21 @@ export default function Home() {
             </AnimatedSection>
             
             <AnimatedSection delay={0.2}>
-              <p className="text-lg md:text-2xl text-blue-50 mb-10 max-w-2xl leading-relaxed font-light">
+              <p className="text-lg md:text-2xl text-blue-50 mb-10 max-w-2xl mx-auto leading-relaxed font-light">
                 Empowering students with modern facilities, experienced faculty, and a holistic approach to learning that prepares them for tomorrow.
               </p>
             </AnimatedSection>
             
-            <AnimatedSection delay={0.4} className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <AnimatedSection delay={0.4} className="flex flex-col sm:flex-row gap-4 justify-center w-full max-w-lg mx-auto pb-8">
               <Link
                 href="/contact"
-                className="bg-accent hover:bg-yellow-400 text-gray-900 px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(245,158,11,0.4)] flex items-center justify-center gap-2"
+                className="bg-accent hover:bg-yellow-400 text-gray-900 px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(245,158,11,0.4)] flex items-center justify-center gap-2 w-full sm:w-auto"
               >
                 Start Journey <ArrowRight size={20} />
               </Link>
               <Link
                 href="#video-tour"
-                className="glass-dark hover:bg-white/20 text-white px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-2"
+                className="glass-dark hover:bg-white/20 text-white px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-2 w-full sm:w-auto"
               >
                 <Play size={20} className="fill-current" /> Watch Video Tour
               </Link>
@@ -84,7 +75,7 @@ export default function Home() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection className="relative">
-              <div className="relative h-[600px] w-full rounded-3xl overflow-hidden shadow-2xl group">
+              <div className="relative h-[400px] md:h-[600px] w-full rounded-3xl overflow-hidden shadow-2xl group">
                 <Image
                   src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1200&auto=format&fit=crop"
                   alt="Students learning"
