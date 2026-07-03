@@ -14,6 +14,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Dr.Ambedkar Modern Public School - Building Bright Futures",
   description: "A modern, professional school website for Nursery to Class 8.",
+  icons: {
+    icon: '/dr-sahab-img.jpeg',
+  },
 };
 
 export default function RootLayout({

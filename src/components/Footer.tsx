@@ -7,25 +7,23 @@ export function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300 pt-16 pb-8 border-t-4 border-primary">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-8 mb-12">
           {/* Brand & About */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-3 group mb-6">
               <div className="bg-primary p-1 rounded-lg w-14 h-14 relative overflow-hidden flex-shrink-0 shadow-sm">
-                <Image 
-                  src="/dr-sahab-img.jpeg" 
-                  alt="Dr. Ambedkar" 
-                  fill 
+                <Image
+                  src="/dr-sahab-img.jpeg"
+                  alt="Dr. Ambedkar"
+                  fill
                   className="object-cover rounded-md"
                 />
               </div>
               <div>
                 <h2 className="text-xl font-bold text-white leading-tight">
-                  Dr.Ambedkar Modern Public
+                  Dr.Ambedkar Modern Public School
                 </h2>
-                <p className="text-xs text-primary font-semibold tracking-wider uppercase">
-                  School
-                </p>
+
               </div>
             </Link>
             <p className="text-sm leading-relaxed text-gray-400">
@@ -66,27 +64,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Admissions */}
-          <div>
-            <h3 className="text-white text-lg font-bold mb-6 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-1/2 after:h-1 after:bg-secondary after:rounded-full">
-              Admissions
-            </h3>
-            <ul className="space-y-3">
-              {[
-                { name: "Admission Process", href: "/contact" },
-                { name: "Fee Structure", href: "/contact" },
-                { name: "Rules & Regulations", href: "#" },
-                { name: "Download Prospectus", href: "#" },
-                { name: "Apply Online", href: "/contact" },
-              ].map((link) => (
-                <li key={link.name}>
-                  <Link href={link.href} className="text-gray-400 hover:text-secondary transition-colors text-sm flex items-center gap-2">
-                    <span className="text-secondary opacity-50">›</span> {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+
 
           {/* Contact Details */}
           <div>
@@ -107,21 +85,6 @@ export function Footer() {
                 <span className="text-gray-400">admissions@ambedkarschool.edu</span>
               </li>
             </ul>
-            
-            {/* Newsletter */}
-            <div className="mt-6">
-              <h4 className="text-white text-sm font-semibold mb-3">Subscribe to Newsletter</h4>
-              <div className="flex">
-                <input 
-                  type="email" 
-                  placeholder="Your email address" 
-                  className="bg-gray-800 text-sm text-white px-4 py-2 rounded-l-md w-full focus:outline-none focus:ring-1 focus:ring-primary border border-gray-700"
-                />
-                <button className="bg-primary hover:bg-secondary text-white px-4 py-2 rounded-r-md transition-colors text-sm font-medium">
-                  Go
-                </button>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -131,7 +94,7 @@ export function Footer() {
             <p>© {new Date().getFullYear()} Dr.Ambedkar Modern Public School. All rights reserved.</p>
             <p className="mt-1">
               Developed by{" "}
-              <a href="https://www.devfordevs.in/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-white transition-colors font-medium">
+              <a href="https://www.devfordevs.in/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-white transition-colors font-bold">
                 DevforDevs
               </a>
             </p>

@@ -10,7 +10,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-screen lg:min-h-[800px] flex items-center justify-center py-20 lg:py-32">
         <HeroCarousel />
-        
+
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center pt-10">
           <div className="max-w-4xl mx-auto flex flex-col items-center">
             <AnimatedSection>
@@ -22,13 +22,13 @@ export default function Home() {
                 <span className="text-gradient-light">Brilliant Minds</span>
               </h1>
             </AnimatedSection>
-            
+
             <AnimatedSection delay={0.2}>
               <p className="text-lg md:text-2xl text-blue-50 mb-10 max-w-2xl mx-auto leading-relaxed font-light">
                 Empowering students with modern facilities, experienced faculty, and a holistic approach to learning that prepares them for tomorrow.
               </p>
             </AnimatedSection>
-            
+
             <AnimatedSection delay={0.4} className="flex flex-col sm:flex-row gap-4 justify-center w-full max-w-lg mx-auto pb-8">
               <Link
                 href="/contact"
@@ -54,14 +54,14 @@ export default function Home() {
             <div className="glass-card p-4 md:p-8 rounded-3xl mx-auto max-w-5xl shadow-2xl relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/20 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl -ml-20 -mb-20 pointer-events-none"></div>
-              
+
               <div className="relative aspect-video w-full rounded-2xl overflow-hidden shadow-lg border border-gray-100/50">
-                <iframe 
+                <iframe
                   className="absolute top-0 left-0 w-full h-full"
-                  src="https://www.youtube.com/embed/ScMzIvxBSi4?autoplay=0&controls=1&rel=0" 
-                  title="School Campus Tour" 
-                  frameBorder="0" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  src="https://www.youtube.com/embed/ScMzIvxBSi4?autoplay=0&controls=1&rel=0"
+                  title="School Campus Tour"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 ></iframe>
               </div>
@@ -77,7 +77,7 @@ export default function Home() {
             <AnimatedSection className="relative">
               <div className="relative h-[400px] md:h-[600px] w-full rounded-3xl overflow-hidden shadow-2xl group">
                 <Image
-                  src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1200&auto=format&fit=crop"
+                  src="/5.jpg"
                   alt="Students learning"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -85,11 +85,11 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-60"></div>
               </div>
               <div className="glass-dark absolute -bottom-10 -right-10 text-white p-8 rounded-3xl shadow-2xl hidden md:block border border-white/20 backdrop-blur-xl">
-                <p className="text-6xl font-extrabold text-gradient-light mb-2">10+</p>
+                <p className="text-6xl font-extrabold text-gradient-light mb-2">2+</p>
                 <p className="font-semibold text-lg text-blue-100">Years of Excellence</p>
               </div>
             </AnimatedSection>
-            
+
             <AnimatedSection delay={0.2}>
               <h2 className="text-sm font-bold text-secondary uppercase tracking-[0.2em] mb-3">Welcome to Dr.Ambedkar</h2>
               <h3 className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight tracking-tight">
@@ -131,11 +131,10 @@ export default function Home() {
               The <span className="text-gradient">Advantage</span>
             </h3>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               { icon: Users, title: "Expert Faculty", desc: "Highly qualified educators dedicated to student success and personalized attention." },
-              { icon: BookOpen, title: "Smart Classrooms", desc: "Interactive digital boards and cutting-edge learning tools." },
               { icon: Monitor, title: "Tech Integration", desc: "Early introduction to coding, AI, and comprehensive digital literacy." },
               { icon: Trophy, title: "Sports Excellence", desc: "Premium facilities for physical education and competitive sports." },
               { icon: ShieldCheck, title: "Maximum Security", desc: "24/7 CCTV surveillance, smart ID cards, and a secure campus." },
@@ -158,13 +157,13 @@ export default function Home() {
 
       {/* Stats Section */}
       <section className="py-20 relative overflow-hidden bg-gradient-premium">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2000&auto=format&fit=crop')] opacity-10 mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-[url('/10.jpg')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { number: "500+", label: "Happy Students" },
-              { number: "25+", label: "Expert Teachers" },
-              { number: "10+", label: "Years Experience" },
+              { number: "10+", label: "Expert Teachers" },
+              { number: "3+", label: "Years Experience" },
               { number: "100%", label: "Student Care" }
             ].map((stat, idx) => (
               <AnimatedSection key={idx} delay={idx * 0.1}>
@@ -187,15 +186,15 @@ export default function Home() {
               World-Class <span className="text-gradient">Facilities</span>
             </h3>
           </div>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { title: "Smart Classes", img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop" },
-              { title: "Computer Lab", img: "https://images.unsplash.com/photo-1547082299-de196ea013d6?q=80&w=800&auto=format&fit=crop" },
-              { title: "Library", img: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=800&auto=format&fit=crop" },
-              { title: "Playground", img: "https://images.unsplash.com/photo-1587370560942-ad2a04eabb6d?q=80&w=800&auto=format&fit=crop" },
-              { title: "Activity Room", img: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=800&auto=format&fit=crop" },
-              { title: "Science Lab", img: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=800&auto=format&fit=crop" }
+              { title: "", img: "/2.jpg" },
+              { title: "", img: "/6.jpg" },
+              { title: "", img: "/7.jpg" },
+              { title: "", img: "/14.jpg" },
+              { title: "", img: "/8.jpg" },
+              { title: "", img: "/10.jpg" }
             ].map((facility, idx) => (
               <AnimatedSection key={idx} delay={idx * 0.1}>
                 <div className="relative h-80 rounded-3xl overflow-hidden group shadow-xl">
@@ -227,7 +226,7 @@ export default function Home() {
               Programs <span className="text-gradient">Offered</span>
             </h3>
           </div>
-          
+
           <div className="flex flex-wrap justify-center gap-4 md:gap-6">
             {["Nursery", "LKG", "UKG", "Class 1 to 5", "Class 6 to 8"].map((program, idx) => (
               <AnimatedSection key={idx} delay={idx * 0.1}>
@@ -249,7 +248,7 @@ export default function Home() {
               What Parents <span className="text-gradient">Say</span>
             </h3>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { text: "The teachers are incredibly supportive. My daughter has shown immense growth in both academics and confidence since joining.", author: "Priya Sharma", role: "Parent of Class 3 Student" },
@@ -279,7 +278,7 @@ export default function Home() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <AnimatedSection>
             <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight">
-              Admissions Open for <br/> <span className="text-gradient-light">Academic Session 2026-27</span>
+              Admissions Open for <br /> <span className="text-gradient-light">Academic Session 2026-27</span>
             </h2>
             <p className="text-xl md:text-2xl text-blue-100 mb-12 max-w-3xl mx-auto font-light">
               Join the Dr.Ambedkar Modern Public School family and give your child the best start to their educational journey.
