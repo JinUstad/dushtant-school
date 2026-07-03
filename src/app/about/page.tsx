@@ -89,15 +89,15 @@ export default function AboutPage() {
               <div className="flex items-center gap-6">
                 <div className="w-16 h-16 rounded-full overflow-hidden relative shadow-lg">
                   <Image
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop"
-                    alt="Principal"
+                    src="/dushynt.png"
+                    alt="Dr Sahab"
                     fill
                     className="object-cover"
                   />
                 </div>
                 <div>
-                  <h4 className="font-extrabold text-gray-900 text-xl">Dr. Sarah Johnson</h4>
-                  <p className="text-secondary font-medium">Principal, DAMPS</p>
+                  <h4 className="font-extrabold text-gray-900 text-xl">Dushyant Goutam</h4>
+                  <p className="text-secondary font-medium">Principle, DAMPS</p>
                 </div>
               </div>
             </AnimatedSection>
