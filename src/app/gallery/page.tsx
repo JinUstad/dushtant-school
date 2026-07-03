@@ -26,6 +26,9 @@ const galleryImages = [
   { id: 12, src: "/12.jpg", category: "Sports Day", alt: "Track and field" },
   { id: 13, src: "/13.jpg", category: "Labs", alt: "Physics Lab" },
   { id: 14, src: "/14.jpg", category: "School Campus", alt: "Play area" },
+  { id: 15, src: "/15.jpg", category: "School Campus", alt: "Play area" },
+  { id: 16, src: "/16.jpg", category: "School Campus", alt: "Play area" },
+
 ];
 
 export default function GalleryPage() {
