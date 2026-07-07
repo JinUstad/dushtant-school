@@ -63,10 +63,9 @@ export default function AboutPage() {
                 <div className="relative aspect-video w-full rounded-2xl overflow-hidden bg-slate-900">
                   <iframe
                     className="absolute top-0 left-0 w-full h-full"
-                    src="https://www.youtube.com/embed/ScMzIvxBSi4?autoplay=0&controls=1&rel=0"
+                    src="https://drive.google.com/file/d/1D9GJKnLPDk3BaOXXQz47mRYFJFCy46md/preview"
                     title="Message from Principal"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allow="autoplay"
                     allowFullScreen
                   ></iframe>
                 </div>
