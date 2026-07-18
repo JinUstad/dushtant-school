@@ -61,13 +61,16 @@ export default function AboutPage() {
             <AnimatedSection>
               <div className="glass-card p-4 rounded-3xl shadow-2xl relative overflow-hidden">
                 <div className="relative aspect-video w-full rounded-2xl overflow-hidden bg-slate-900">
-                  <iframe
-                    className="absolute top-0 left-0 w-full h-full"
-                    src="https://drive.google.com/file/d/1D9GJKnLPDk3BaOXXQz47mRYFJFCy46md/preview"
-                    title="Message from Principal"
-                    allow="autoplay"
-                    allowFullScreen
-                  ></iframe>
+                  <video
+                    className="absolute top-0 left-0 w-full h-full object-cover"
+                    src="/school-item.mp4"
+                    title="School Video"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    controls
+                  ></video>
                 </div>
               </div>
             </AnimatedSection>
