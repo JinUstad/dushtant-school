@@ -6,8 +6,6 @@ import { Footer } from "@/components/Footer";
 import { FloatingContactButtons } from "@/components/FloatingContactButtons";
 import { AdmissionPopup } from "@/components/AdmissionPopup";
 import { headers } from "next/headers";
-import fs from "fs";
-import path from "path";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -32,10 +30,10 @@ export default async function RootLayout({
 
   let isExpired = false;
   try {
-    const paymentPath = path.join(process.cwd(), 'payment-status.json');
-    if (fs.existsSync(paymentPath)) {
-      const data = JSON.parse(fs.readFileSync(paymentPath, 'utf8'));
-      isExpired = data.expired === true;
+    const response = await fetch('https://kvdb.io/J4r7GKEZhsy5efUJnAeKg2/expired', { cache: 'no-store' });
+    if (response.ok) {
+      const text = await response.text();
+      isExpired = text === 'true';
     }
   } catch(e) {
     console.error("Error reading payment status", e);

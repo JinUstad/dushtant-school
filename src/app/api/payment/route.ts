@@ -1,17 +1,15 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
 
 export const dynamic = 'force-dynamic';
 
 export async function GET() {
   try {
-    const paymentPath = path.join(process.cwd(), 'payment-status.json');
+    const response = await fetch('https://kvdb.io/J4r7GKEZhsy5efUJnAeKg2/expired', { cache: 'no-store' });
     let expired = false;
     
-    if (fs.existsSync(paymentPath)) {
-      const data = JSON.parse(fs.readFileSync(paymentPath, 'utf8'));
-      expired = data.expired === true;
+    if (response.ok) {
+      const text = await response.text();
+      expired = text === 'true';
     }
     
     return NextResponse.json({ expired });
@@ -29,8 +27,10 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Invalid payload' }, { status: 400 });
     }
     
-    const paymentPath = path.join(process.cwd(), 'payment-status.json');
-    fs.writeFileSync(paymentPath, JSON.stringify({ expired }, null, 2), 'utf8');
+    await fetch('https://kvdb.io/J4r7GKEZhsy5efUJnAeKg2/expired', {
+      method: 'POST',
+      body: String(expired)
+    });
     
     return NextResponse.json({ success: true, expired });
   } catch (error) {
