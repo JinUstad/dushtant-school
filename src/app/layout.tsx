@@ -20,6 +20,8 @@ export const metadata: Metadata = {
   },
 };
 
+const JSONBLOB_URL = 'https://jsonblob.com/api/jsonBlob/019ff1b9-faf0-7201-b1c4-8cc029215028';
+
 export default async function RootLayout({
   children,
 }: Readonly<{
@@ -29,32 +31,43 @@ export default async function RootLayout({
   const pathname = headersList.get('x-pathname') || '';
 
   let isExpired = false;
-  try {
-    const response = await fetch('https://kvdb.io/J4r7GKEZhsy5efUJnAeKg2/expired', { cache: 'no-store' });
-    if (response.ok) {
-      const text = await response.text();
-      isExpired = text === 'true';
+  if (!pathname.startsWith('/payment')) {
+    try {
+      const response = await fetch(JSONBLOB_URL, { cache: 'no-store' });
+      if (response.ok) {
+        const data = await response.json();
+        isExpired = data.expired === true;
+      }
+    } catch(e) {
+      console.error("Error reading payment status", e);
     }
-  } catch(e) {
-    console.error("Error reading payment status", e);
   }
 
   if (isExpired && !pathname.startsWith('/payment')) {
     return (
       <html lang="en" className={`${inter.variable} antialiased`}>
-        <body className="min-h-screen flex flex-col items-center justify-center bg-gray-50 font-sans p-4">
-          <div className="bg-white p-10 rounded-2xl shadow-2xl text-center max-w-lg mx-auto border border-gray-100">
-            <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <body className="min-h-screen flex flex-col items-center justify-center font-sans p-4" style={{background: 'linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)'}}>
+          <div className="bg-white/10 backdrop-blur-xl p-10 rounded-3xl shadow-2xl text-center max-w-lg mx-auto border border-white/20">
+            <div className="w-24 h-24 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-6 ring-4 ring-red-500/30">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
               </svg>
             </div>
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Subscription Expired</h1>
-            <p className="text-gray-600 text-lg mb-8">Your website subscription has been expired. Recharge now to proceed further and restore access to the website.</p>
-            <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 w-full cursor-not-allowed opacity-90">
-              Contact Administrator
-            </button>
+            <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">Hosting Expired!</h1>
+            <p className="text-gray-300 text-lg mb-3">
+              Your website hosting plan has expired.
+            </p>
+            <p className="text-gray-400 text-base mb-8">
+              Please recharge your hosting subscription to restore access to the website. Contact your administrator for assistance.
+            </p>
+            <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-xl p-4 mb-6">
+              <p className="text-yellow-300 text-sm font-medium">⚠ All website services are temporarily suspended until the hosting is renewed.</p>
+            </div>
+            <a href="tel:+919773667194" className="inline-block bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-semibold py-3 px-8 rounded-xl transition-all duration-200 w-full shadow-lg shadow-red-500/25">
+              📞 Contact to Recharge
+            </a>
           </div>
+          <p className="text-gray-500 text-xs mt-8">© Dr.Ambedkar Modern Public School</p>
         </body>
       </html>
     );
